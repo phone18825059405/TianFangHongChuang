@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>天方鸿创</title>
+	<meta name="keyword" content="软件公司">
+	<meta name="description" content="软件公司">
+	<link rel="icon" href="images/favicon2.ico"/>
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="topbar">
+		<div class="wrapper clearfix">
+			<div class="fl">
+				<span class="part"><i class="iconfont icon-dianhua"></i><span class="text">0755-82045168,</span><span class="text">1-800-6547-321</span></span>
+				<span class="part"><i class="iconfont icon-dizhi"></i><span class="text">深圳市福田区石厦北二街新天世纪商务中心B座2604</span></span>
+				<span class="part"><i class="iconfont icon-youxiang"></i><span class="text">1498362129@qq.com</span></span>
+			</div>
+			<div class="fr">
+				<span class="part"><i class="iconfont icon-denglu"></i><span class="text">登录</span>
+			</div>
+			<div style="clear:both"></div>
+		</div>	
+	</div>
+	<div class="nav">
+		<div class="nav-wrap clearfix">
+			<div class="nav-logo">
+				<a href="">
+					<img src="images/logo.jpg" alt="">
+				</a>			
+			</div>
+			<div class="nav-bar">
+				<div class="wrapper">
+					<ul class="static clearfix">
+						<li class="active">
+							<a href="#" class="item">首页</a>
+						</li>
+						<li>
+							<a class="hasdropdown item" href="views/detail.html">产品与方案</a>
+							<ul class="dropdown ">
+								<li><a href="views/detail_mianyi.html">犬类免疫系统</a></li>
+								<li><a href="views/detail_dengji.html">养犬登记管理系统</a></li>
+								<li><a href="views/detail_caiwu.html">财务管理系统</a></li>
+								<li><a href="views/detail_zichan.html">资产管理系统</a></li>
+							</ul>
+						</li>
+						<li>
+							<a class="hasdropdown item" href="views/service.html">服务与支持</a>
+							<div class="dropdown column clearfix ">
+								<ul>
+									<li><a href="views/servies.html#service_software">软件支持</a></li>
+									<li><a href="views/servies.html#service_operation">运维服务</a></li>
+									<li><a href="views/servies.html#service_consult">咨询服务</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a class="hasdropdown item" href="views/about.html">关于我们</a>
+							<ul class="dropdown ">
+								<li><a href="views/about.html#about_introduce">公司概况</a></li>
+								<li><a href="views/about.html#about_mainService">主要服务</a></li>
+								<li><a href="views/about.html#offer">人才招聘</a></li>
+								<li><a href="views/about.html#about_concact">联系我们</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		<ul>
+			<li>
+				<div class="img active" style="background-image:url(images/banner.jpg)">
+					<div class="introduce">
+						<h1>养犬登记管理系统</h1>
+						<h2>简单、实效、可操作性强的系统推进区养犬登记信息化管理，进一步提高区区养犬监督管理水平。</h2>
+						<a href="javascript:" class="detail">查看详情 >></a>
+					</div>								
+				</div>
+				<div class="img" style="background-image:url(images/banner3.jpg)">
+					<div class="introduce">
+						<h1>资产管理系统</h1>
+						<h2>简单、实效、可操作性强的系统推进区养犬登记信息化管理，进一步提高区区养犬监督管理水平。</h2>
+						<a href="javascript:" class="detail">查看详情 >></a>
+					</div>								
+				</div>
+				<div class="img" style="background-image:url(images/banner4.jpg)">
+					<div class="introduce">
+						<h1>犬类免疫系统</h1>
+						<h2>简单、实效、可操作性强的系统推进区养犬登记信息化管理，进一步提高区区养犬监督管理水平。</h2>
+						<a href="javascript:" class="detail">查看详情 >></a>
+					</div>								
+				</div>
+				<div class="img" style="background-image:url(images/banner5.jpg)">
+					<div class="introduce">
+						<h1>财务系统</h1>
+						<h2>简单、实效、可操作性强的系统推进区养犬登记信息化管理，进一步提高区区养犬监督管理水平。</h2>
+						<a href="javascript:" class="detail">查看详情 >></a>
+					</div>								
+				</div>
+			</li>
+		</ul>
+		<span class="btn-l"><img src="images/l-btn.png" alt=""></span>
+		<span class="btn-r"><img src="images/r-btn.png" alt=""></span>
+		<div class="square">
+		</div>
+	</div>
+	<script type="text/javascript">
+		var index = 0;
+		var imgs = $('.banner .img');
+		var len = imgs.length;
+		var btn_l = $('.banner .btn-l');
+		var btn_r = $('.banner .btn-r');
+		var square = $('.square');
+		var spans;
+
+		function init(){
+			for(var i=0; i<len; i++){
+				if(i == 0){
+					square.append('<span class="cur" data-index="'+i+'"></span>')
+				}else{
+					square.append('<span data-index="'+i+'"></span>')
+				}				
+			}
+			spans = $('span',square);
+			//左按钮
+			btn_l.click(function(){
+				clearInterval(initLoop);
+				index-=1;
+				run('right');
+
+				initLoop = setInterval(function(){
+					index+=1;
+					run();
+				},5000)
+			})
+			//右按钮
+			btn_r.click(function(){
+				clearInterval(initLoop);
+				index+=1;
+				run();
+
+				initLoop = setInterval(function(){
+					index+=1;
+					run();
+				},5000)
+			})
+
+			//方形按钮
+			spans.click(function(){
+				clearInterval(initLoop);
+
+				var curIndex = index;
+				index = $(this).attr('data-index')*1;
+				console.log(index);
+				run(curIndex);
+
+				initLoop = setInterval(function(){
+					index+=1;
+					run();
+				},5000)
+			})
+		}
+
+		function run(opt){
+			if(opt === 'right'){
+				//imgs.eq(index-1).removeClass('active');
+				if(index<0){
+					index = len-1;
+				}
+			}else if(!opt){
+				//imgs.eq(index-1).removeClass('active');
+				if(index>len-1){
+					index = 0;
+				}
+			}else if(typeof(opt) == 'number'){
+				console.log(opt+'yes');
+				//imgs.eq(opt).removeClass('active');
+
+			}
+
+						
+			imgs.eq(index).addClass('active').siblings().removeClass('active');
+			spans.eq(index).addClass('cur').siblings().removeClass('cur')
+		}
+
+		var initLoop = setInterval(function(){
+			index+=1;
+			run();
+		},5000)
+
+		init();
+	</script>
+	<div class="about">
+		<div class="wrapper">
+			<div class="introduce">
+				<h1>欢迎!</h1>
+				<h4>尽最大努力履行并力争超越我们对客户的承诺</h4>
+				<p>天方鸿创科技有限公司是位于深州的一家专业从事软件开发、软件定制、软件实施的高新技术企业。拥有一批长期专业从事软件开发、软件定制的专业人才，具有雄厚的技术开发实力，全方位满足政府与企业信息化需求。</p>
+				<p>公司主营业务：软件外包、软件定制开发、系统维护、OA办公系统、手机软件定制等等。</p>
+				<a href="views/about.html#introduce" class="linkbtn">查看更多>></a>							
+			</div>
+		</div>
+		<canvas id="Mycanvas" class="Mycanvas"></canvas>
+		<script>
+			//定义画布宽高和生成点的个数
+			var parentNode = document.getElementsByClassName('about')[0];
+			var WIDTH = document.body.offsetWidth, HEIGHT = parentNode.offsetHeight, POINT = 35;
+			
+			var canvas = document.getElementById('Mycanvas');
+			canvas.width = WIDTH,
+			canvas.height = HEIGHT;
+			var context = canvas.getContext('2d');
+			context.strokeStyle = 'rgba(0,0,0,0.02)',
+			context.strokeWidth = 1,
+			context.fillStyle = 'rgba(0,0,0,0.05)';
+			var circleArr = [];
+			var _interval;
+
+			//线条：开始xy坐标，结束xy坐标，线条透明度
+			function Line (x, y, _x, _y, o) {
+				this.beginX = x,
+				this.beginY = y,
+				this.closeX = _x,
+				this.closeY = _y,
+				this.o = o;
+			}
+			//点：圆心xy坐标，半径，每帧移动xy的距离
+			function Circle (x, y, r, moveX, moveY) {
+				this.x = x,
+				this.y = y,
+				this.r = r,
+				this.moveX = moveX,
+				this.moveY = moveY;
+			}
+			//生成max和min之间的随机数
+			function num (max, _min) {
+				var min = arguments[1] || 0;
+				return Math.floor(Math.random()*(max-min+1)+min);
+			}
+			// 绘制原点
+			function drawCricle (cxt, x, y, r, moveX, moveY) {
+				var circle = new Circle(x, y, r, moveX, moveY)
+				cxt.beginPath()
+				cxt.arc(circle.x, circle.y, circle.r, 0, 2*Math.PI)
+				cxt.closePath()
+				cxt.fill();
+				return circle;
+			}
+			//绘制线条
+			function drawLine (cxt, x, y, _x, _y, o) {
+				var line = new Line(x, y, _x, _y, o)
+				cxt.beginPath()
+				cxt.strokeStyle = 'rgba(0,0,0,'+ o +')'
+				cxt.moveTo(line.beginX, line.beginY)
+				cxt.lineTo(line.closeX, line.closeY)
+				cxt.closePath()
+				cxt.stroke();
+
+			}
+			//初始化生成原点
+			function init () {
+				circleArr = [];
+				for (var i = 0; i < POINT; i++) {
+					circleArr.push(drawCricle(context, num(WIDTH), num(HEIGHT), num(15, 2), num(10, -10)/40, num(10, -10)/40));
+				}
+				draw();
+			}
+
+			//每帧绘制
+			function draw () {
+				context.clearRect(0,0,canvas.width, canvas.height);
+				for (var i = 0; i < POINT; i++) {
+					drawCricle(context, circleArr[i].x, circleArr[i].y, circleArr[i].r);
+				}
+				for (var i = 0; i < POINT; i++) {
+					for (var j = 0; j < POINT; j++) {
+						if (i + j < POINT) {
+							var A = Math.abs(circleArr[i+j].x - circleArr[i].x),
+								B = Math.abs(circleArr[i+j].y - circleArr[i].y);
+							var lineLength = Math.sqrt(A*A + B*B);
+							var C = 1/lineLength*7-0.009;
+							var lineOpacity = C > 0.03 ? 0.03 : C;
+							if (lineOpacity > 0) {
+								drawLine(context, circleArr[i].x, circleArr[i].y, circleArr[i+j].x, circleArr[i+j].y, lineOpacity);
+							}
+						}
+					}
+				}
+			}
+
+			//调用执行
+			function createEffect() {
+				init();
+				_interval = setInterval(function () {
+					for (var i = 0; i < POINT; i++) {
+						var cir = circleArr[i];
+						cir.x += cir.moveX;
+						cir.y += cir.moveY;
+						if (cir.x > WIDTH) cir.x = 0;
+						else if (cir.x < 0) cir.x = WIDTH;
+						if (cir.y > HEIGHT) cir.y = 0;
+						else if (cir.y < 0) cir.y = HEIGHT;
+						
+					}
+					draw();
+				}, 16);
+			}
+
+			window.onload = createEffect;
+
+			window.onresize = function(){
+				canvas.width = WIDTH = document.body.offsetWidth;
+				canvas.height = HEIGHT = parentNode.offsetHeight;
+				context.strokeStyle = 'rgba(0,0,0,0.02)',
+				context.strokeWidth = 1,
+				context.fillStyle = 'rgba(0,0,0,0.05)';
+				clearInterval(_interval);
+				//context.clearRect(0,0,canvas.width, canvas.height);
+				createEffect();
+			}
+		</script>
+	</div>
+	<div class="service">
+		<div class="wrapper">
+			<h1>我们的服务</h1>
+			<div class="clearfix">
+				<div class="fl col3">
+					<img src="images/service1.jpg" alt="">
+					<h4>软件支持</h4>
+					<p>技术支持工程师主要是在软件或硬件方向从事售前或售后技术维护、应用培训、升级管理、解决投诉，提升客户满意度，扩大用户群体对自有品牌的良好口碑。越来越多的产品需要一个售后的技术支持，比如IT行业的软件，硬件，家电行业的电视机，电冰箱，还有一些特殊的高新技术领域。可以这样说，有没有一个良好的技术支持团队，成为当今社会产品竞争力的关键。</p>
+				</div>
+				<div class="fl col3">
+					<img src="images/service2.jpg" alt="">
+					<h4>运维服务</h4>
+					<p>IT外包服务 (IT Outsourcing)，就是客户将全部或部分IT工作包给专业性公司完成的服务模式。客户整合利用其外部最优秀的IT专业化资源，从而达到降低成本、提高效率、充分发挥自身核心竞争力和增强客户对外环境的应变能力的一种管理模式。这已经成为一个快速成长的行业，并且在2000年后持续快速成长。目前，已经有60％的美国企业借助专业的IT外包服务迅速扩展自身的业务。</p>
+				</div>
+				<div class="fl col3">
+					<img src="images/service3.jpg" alt="">
+					<h4>咨询服务</h4>
+					<p>初创的测试团队，缺乏对测试的组织、流程、规范、控制、度量等各个方面的管理，导致测试质量不高、覆盖度不足、组织混乱、流程不能整合到整个开发生命周期。针对此情况，我们提供测试体系咨询服务，帮助用户构建符合自己目标和实际情况的测试体系。主要提供面向开发/测试模型的的测试流程、测试组织、方法等咨询服务，帮助用户构建自己的测试团队、测试组织、测试流程、测试岗位。测试体系包括：规程、模版、指南等。</p>
+				</div>				
+			</div>
+			<a href="views/service.html" class="linkbtn clearfix">查看详情>></a>
+		</div>		
+	</div>
+	<div class="client">
+		<h1>我们的成功案例</h1>
+		<div class="imgWrapper clearfix">
+			<div class="col3">
+				<img src="images/case1.jpg" alt="">
+				<span class="overlay"></span>
+				<div class="template">
+					<h3>OA系统</h3>
+					<p>暂未上线</p>
+					<a href="javascript:" class="linkbtn">查看详情</a>
+				</div>
+			</div>
+			<div class="col3">
+				<img src="images/case6.jpg" alt="">
+				<span class="overlay"></span>
+				<div class="template">
+					<h3>资产管理系统</h3>
+					<p>It was about a male employee being a subject to sexual harassment by another male colleague while on a business trip.</p>
+					<a href="views/detail_zichan.html" class="linkbtn">查看详情</a>
+				</div>
+			</div>
+			<div class="col3">
+				<img src="images/case3.jpg" alt="">
+				<span class="overlay"></span>
+				<div class="template">
+					<h3>犬类免疫系统</h3>
+					<p>It was about a male employee being a subject to sexual harassment by another male colleague while on a business trip.</p>
+					<a href="views/detail_mianyi.html" class="linkbtn">查看详情</a>
+				</div>
+			</div>
+			<div class="col3">
+				<img src="images/case4.jpg" alt="">
+				<span class="overlay"></span>
+				<div class="template">
+					<h3>动物诊疗监督系统</h3>
+					<p>暂未上线</p>
+					<a href="javascript:" class="linkbtn">查看详情</a>
+				</div>
+			</div>
+			<div class="col3">
+				<img src="images/case5.jpg" alt="">
+				<span class="overlay"></span>
+				<div class="template">
+					<h3>养犬登记管理系统</h3>
+					<p>It was about a male employee being a subject to sexual harassment by another male colleague while on a business trip.</p>
+					<a href="views/detail_dengji.html" class="linkbtn">查看详情</a>
+				</div>
+			</div>
+			<div class="col3">
+				<img src="images/case7.jpg" alt="">
+				<span class="overlay"></span>
+				<div class="template">
+					<h3>财务系统</h3>
+					<p>It was about a male employee being a subject to sexual harassment by another male colleague while on a business trip.</p>
+					<a href="views/detail_caiwu.html" class="linkbtn">查看详情</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrapper">
+			<p>©2016 天方鸿创科技有限公司 &nbsp;&nbsp; <span>粤ICP备12053513号</span></p>
+		</div>
+	</div>
+</body>
+</html>

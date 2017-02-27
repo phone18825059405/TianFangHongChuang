@@ -1,0 +1,115 @@
+@font-face{
+	font-family: "兰亭细黑";
+	src:url('../fonts/FZLTCXHJW.ttf') format('truetype');
+}
+
+.detail{
+	background-color: #f5f6f7;
+}
+.detail .img-bar{	
+	position: relative;
+	overflow: hidden;
+	height: 400px;
+}
+.detail .img-wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 300ms ease;
+}
+.detail .img{
+	background-image: url(../images/bg_detail.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: #fff;
+	width: 100%;
+	height: 400px;
+}
+.detail .text {
+	position: absolute;
+    background-color: rgba(0,0,0,.3);
+    height: 100%;
+    text-align: center;
+    padding-top: 100px;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    color: #fff;
+}
+.detail .text h2{
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+.detail .text p{
+	font-size: 24px;
+	font-family: "兰亭细黑";
+	font-weight: 400;
+}
+
+
+.product{
+	font-size: 0;
+	padding:100px 0;
+	padding-top: 120px;
+}
+
+.product .col3{
+	display: inline-block;
+	width: 33.333333%;
+	margin-bottom:40px;
+	vertical-align: top;
+	padding: 15px;
+}
+.list img{
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	-webkit-transition: transform 300ms ease;
+	-moz-transition: transform 300ms ease;
+	--o-transition: transform 300ms ease;
+	transition: transform 300ms ease;
+	overflow: hidden;
+}
+
+.list h4{
+	font-size: 20px;
+	margin-bottom: 5px;
+	border-bottom: 1px dotted #ccc;;
+	line-height: 1.8;
+	color: #e11313;
+}
+.list p{
+	font-size: 18px;
+	font-family: "兰亭细黑";
+	font-weight: 600;
+	color: #999;
+}
+.list .linkbtn{
+	text-align: center;
+	margin-top: 0;
+	border-radius: 4px;
+	font-size: 14px;
+}
+.product .list{
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+	background:transparent;
+}
+.product .list:hover{
+    -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    -o-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    -webkit-transform: translate3d(0, -2px, 0);
+    -moz-transform: translate3d(0, -2px, 0);
+    -o-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+    background: #fff;
+}
